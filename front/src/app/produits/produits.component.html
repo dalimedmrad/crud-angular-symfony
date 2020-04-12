@@ -1,0 +1,30 @@
+<p>produits works!</p>
+
+<a href="/ajout" class="btn btn-primary">Ajouter</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Quantite</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produits">
+        <td>{{produit.id}} </td>
+        <td> {{produit.nom}}</td>
+        <td> {{produit.prix}}</td>
+        <td> {{produit.quantite}}</td>
+        <td> {{produit.description}}</td>
+        <td>
+          <button (click)="EditProduit(produit.id)" class="btn btn-success">Modifier</button>
+        <button (click)="deleteProduit(produit)" class="btn btn-danger">Supprimer</button>
+          <button (click)="produitDetails(produit.id)" class="btn btn-info" style="margin-left: 10px">Afficher</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
